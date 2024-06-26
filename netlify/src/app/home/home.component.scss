@@ -1,0 +1,136 @@
+// Variables for color and spacing
+$primary-color: #e50914; // Netflix red color
+$secondary-color: #333;
+$background-color: #f8f9fa;
+$text-color: #1d1c1c;
+$spacing-unit: 16px;
+$max-width: 600px;
+
+.text-form-aligner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $secondary-color;
+  color: $text-color;
+  height: 50vh; // Half viewport height
+
+  @media (max-width: 768px) {
+    height: auto; // Adjust height for smaller screens
+    padding: $spacing-unit;
+  }
+}
+
+.text-form-container {
+  max-width: $max-width;
+  padding: 10px;
+  background-color: $background-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: $spacing-unit;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5 * $spacing-unit;
+
+    @media (max-width: 768px) {
+      font-size: 2em;
+    }
+    @media (max-width: 480px) {
+      font-size: 1.5em;
+    }
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: $spacing-unit;
+    color: lighten($secondary-color, 20%);
+
+    @media (max-width: 768px) {
+      font-size: 1.25em;
+    }
+    @media (max-width: 480px) {
+      font-size: 1em;
+    }
+  }
+
+  h3 {
+    font-size: 1em;
+    margin-bottom: 1.5 * $spacing-unit;
+    font-weight: normal;
+
+    @media (max-width: 768px) {
+      font-size: 0.875em;
+    }
+    @media (max-width: 480px) {
+      font-size: 0.75em;
+    }
+  }
+}
+
+.display-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+
+  .input-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; // Allow wrapping for smaller screens
+
+    .input {
+      flex: 1;
+      padding: 0.75 * $spacing-unit;
+      border: 1px solid darken($secondary-color, 10%);
+      border-radius: 4px 0 0 4px;
+      margin-right: -1px;
+      font-size: 1em;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+
+      &::placeholder {
+        color: lighten($secondary-color, 40%);
+      }
+
+      @media (max-width: 480px) {
+        border-radius: 4px; // Reset border radius for small screens
+        margin-right: 0;
+        margin-bottom: $spacing-unit;
+      }
+    }
+
+    .red-btn {
+      background-color: $primary-color;
+      color: $text-color;
+      border: none;
+      padding: 0.75 * $spacing-unit 1.5 * $spacing-unit;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+
+      @media (max-width: 480px) {
+        border-radius: 4px; // Reset border radius for small screens
+        width: 100%;
+      }
+    }
+  }
+}

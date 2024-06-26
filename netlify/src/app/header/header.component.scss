@@ -1,0 +1,131 @@
+.header-fixed {
+  position: fixed;
+  width: 100%;
+  height: 65px;
+  background-color: #141414;
+  z-index: 1000;
+
+  .header-limiter {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .netflix-logo {
+      height: 35px;
+    }
+
+    .lang-sign-container {
+      display: flex;
+      align-items: center;
+
+      .main-nav {
+        ul {
+          display: flex;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            margin: 0 25px;
+
+            a {
+              color: #fff;
+              text-decoration: none;
+              font-size: 18px;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+
+      .language-switcher {
+        background-color: #000;
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 3px;
+        padding: 5px;
+        margin-right: 20px;
+        font-size: 14px;
+
+        option {
+          background-color: #000;
+          color: #fff;
+        }
+      }
+
+      .sign-in-btn {
+        background-color: #e50914;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #f40612;
+        }
+      }
+    }
+  }
+}
+
+.header-fixed-placeholder {
+  height: 65px; 
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .header-limiter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav {
+    ul {
+      flex-direction: column;
+      margin-top: 10px;
+
+      li {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .lang-sign-container {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .language-switcher {
+      margin: 10px 0;
+    }
+
+    .sign-in-btn {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav ul {
+    display: none;
+  }
+
+  .lang-sign-container {
+    .language-switcher {
+      width: 100%;
+      text-align: center;
+    }
+
+    .sign-in-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

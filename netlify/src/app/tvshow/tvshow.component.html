@@ -1,0 +1,30 @@
+<!-- 
+<h1>TV show</h1>
+<ul class="job-list">
+    <li *ngFor="let tv of Tvshow; let i = index">
+      <div class="job-container">
+        <h2>Id: {{tv.id}}</h2>
+        <img src={{tv.image}} />
+        <h2>Location: {{movie.location}}</h2>
+      </div>
+    </li>
+  </ul>
+   -->
+<h1>TV show</h1>
+
+   <div class="movie-grid">
+    <div *ngFor="let movie of Tvshow" class="movie" (click)="showVideo(movie.video)">
+      <img [src]="movie.image" [alt]="movie.title">
+    <div class="movie-title">{{ movie.title }}</div>
+
+    </div>
+  </div>
+  
+  <!-- Video Modal -->
+  <div *ngIf="isVideoModalOpen" class="modal" (click)="closeVideoModal()">
+    <span class="close" (click)="closeVideoModal()">&times;</span>
+    <video controls autoplay>
+      <source [src]="currentVideo" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
